@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Monsters;
 
 namespace BalancedVarietyPack.BalancedVarietyPackCode.Patches;
 
@@ -36,21 +37,22 @@ internal static class LifestealPatch
     {
         await original;
         
-        // Lifesteal should only apply if damage was dealt by the player
-        if (dealer?.Player is null) return;
+        // only apply if damage was dealt by the player or by Osty
+        if (dealer?.Player is null && dealer?.Monster is not Osty) return;
 
-        // Lifesteal should only apply if an attack that has it dealt damage
+        // only apply if an attack that has it dealt damage
         if (cardSource is not { Type: CardType.Attack }) return;
         if (!cardSource.Keywords.Contains(ModKeywords.Lifesteal)) return;
 
-        // Lifesteal should only apply if an enemy took damage
-        if (target.Side == dealer.Side) return;
-
-        // Lifesteal should only heal for unblocked damage
-        // dealt and only if the player is still alive
-        int healing = results.UnblockedDamage;
-        if (healing <= 0 || dealer.IsDead) return;
-
+        // only apply if an enemy took damage
+        // only heal if the dealer is still alive
+        if (target.Side == dealer.Side || dealer.IsDead) return;
+        
+        // heal unblocked damage only and prevent overheal
+        int missingHealth = dealer.MaxHp - dealer.CurrentHp;
+        int healing = Math.Clamp(
+            results.UnblockedDamage, min: 0, max: missingHealth);
+        
         await CreatureCmd.Heal(dealer, healing);
     }
 }
