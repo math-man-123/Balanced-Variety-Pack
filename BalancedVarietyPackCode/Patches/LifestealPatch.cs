@@ -52,7 +52,8 @@ internal static class LifestealPatch
         int missingHealth = dealer.MaxHp - dealer.CurrentHp;
         int healing = Math.Clamp(
             results.UnblockedDamage, min: 0, max: missingHealth);
-        
+
+        if (healing <= 0) return;
         await CreatureCmd.Heal(dealer, healing);
     }
 }
