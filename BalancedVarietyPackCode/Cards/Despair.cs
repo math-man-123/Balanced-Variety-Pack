@@ -23,13 +23,13 @@ public class Despair() : CustomCardModel(
     
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
-        [ CardKeyword.Unplayable, CardKeyword.Eternal ];
+        [ CardKeyword.Unplayable, CardKeyword.Ethereal ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [ HoverTipFactory.FromPower<ThornsPower>() ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
-        [ new PowerVar<ThornsPower>(5) ];
+        [ new PowerVar<ThornsPower>(3) ];
     
     
     protected override async Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
