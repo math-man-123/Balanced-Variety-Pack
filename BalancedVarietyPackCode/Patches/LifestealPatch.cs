@@ -15,6 +15,9 @@ namespace BalancedVarietyPack.BalancedVarietyPackCode.Patches;
 [HarmonyPatch(typeof(Hook), nameof(Hook.AfterDamageGiven))]
 internal static class LifestealPatch
 {
+    // keep HealFactor's card_keywords.json description synchronized
+    public static decimal HealFactor => 0.5m;
+    
     [HarmonyPostfix]
     private static void HookPostfix(
         Creature? dealer,
@@ -26,7 +29,6 @@ internal static class LifestealPatch
         __result = ApplyLifesteal(
             dealer, results, target, cardSource, __result);
     }
-
     
     private static async Task ApplyLifesteal(
         Creature? dealer,
@@ -48,11 +50,11 @@ internal static class LifestealPatch
         // only heal if the dealer is still alive
         if (target.Side == dealer.Side || dealer.IsDead) return;
         
-        // heal unblocked damage only and prevent overheal
+        // heal percentage of unblocked damage only and prevent overheal
         int missingHealth = dealer.MaxHp - dealer.CurrentHp;
-        int healing = Math.Clamp(
-            results.UnblockedDamage, min: 0, max: missingHealth);
-
+        int healing = (int) Math.Ceiling(Math.Clamp(
+            results.UnblockedDamage * HealFactor, min: 0, max: missingHealth));
+        
         if (healing <= 0) return;
         await CreatureCmd.Heal(dealer, healing);
     }
