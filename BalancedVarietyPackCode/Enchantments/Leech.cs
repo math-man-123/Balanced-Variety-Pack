@@ -14,6 +14,9 @@ namespace BalancedVarietyPack.BalancedVarietyPackCode.Enchantments;
 
 public class Leech : CustomEnchantmentModel
 {
+    protected override string? CustomIconPath =>
+        "res://BalancedVarietyPack/images/enchantments/leech.png";
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [ HoverTipFactory.FromKeyword(ModKeywords.Lifesteal) ];
     

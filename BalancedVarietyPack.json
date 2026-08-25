@@ -3,7 +3,7 @@
   "name": "Balanced Variety Pack",
   "author": "Plüschgiraffe",
   "description": "Content expansion aiming at increasing run variety, while staying close to vanilla balancing.",
-  "version": "v0.8.0",
+  "version": "v0.8.1",
   "min_game_version": "0.111.0",
   "has_pck": true,
   "has_dll": true,
