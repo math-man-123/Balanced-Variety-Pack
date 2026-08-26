@@ -4,6 +4,6 @@
   "BALANCEDVARIETYPACK-HIGH_POWER.smartDescription": "The targets of your cards have a [blue]{Amount}%[/blue] chance to be randomized, including yourself and allies.",
 
   "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.title": "Extra Turn",
-  "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.description": "The next time you end your turn, immediately take an additional one.",
+  "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.description": "Upon ending your turn, immediately take an additional one.",
   "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.smartDescription": "The next {Amount:plural:time|[blue]{}[/blue] times} you end your turn, immediately take an additional one."
 }
