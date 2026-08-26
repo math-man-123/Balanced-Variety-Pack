@@ -1,6 +1,8 @@
 using System.Reflection;
+using BalancedVarietyPack.BalancedVarietyPackCode.Effects;
 using BaseLib.Abstracts;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -18,11 +20,20 @@ public class HighPower : CustomPowerModel
     private const int MinAmount = 0;
     private const int MaxAmount = 100;
     
+    // clamps amount and updates VFX
+    private void UpdateAmountAndVfx()
+    {
+        SetAmount(Math.Clamp(Amount, MinAmount, MaxAmount));
+
+        if (!LocalContext.IsMe(Owner)) return;
+        if (Amount > 0) TrippyVfx.Show(Amount);
+        else TrippyVfx.Hide();
+    }
+    
     public override Task AfterApplied(
         Creature? applier, CardModel? cardSource)
     {
-        // ensure correct range on initial application
-        ClampAmount();
+        UpdateAmountAndVfx();
         return Task.CompletedTask;
     }
 
@@ -33,15 +44,14 @@ public class HighPower : CustomPowerModel
         Creature? applier,
         CardModel? cardSource)
     {
-        // ensure changing amount stays in correct range
-        if (power == this) ClampAmount();
+        if (power == this) UpdateAmountAndVfx();
         return Task.CompletedTask;
     }
-
-    private void ClampAmount()
+    
+    public override Task AfterRemoved(Creature oldOwner)
     {
-        int clamped = Math.Clamp(Amount, MinAmount, MaxAmount);
-        if (clamped != Amount) SetAmount(clamped);
+        if (LocalContext.IsMe(oldOwner)) TrippyVfx.Hide();
+        return Task.CompletedTask;
     }
     
     // this is needed to change cardPlay.Target, since it is init only
