@@ -1,4 +1,7 @@
 {
   "BALANCEDVARIETYPACK-DESPAIR.title": "Despair",
-  "BALANCEDVARIETYPACK-DESPAIR.description": "At the end of your turn, if this is in your [gold]Hand[/gold], a random enemy gains {ThornsPower:diff()} [gold]Thorns[/gold]."
+  "BALANCEDVARIETYPACK-DESPAIR.description": "At the end of your turn, if this is in your [gold]Hand[/gold], a random enemy gains {ThornsPower:diff()} [gold]Thorns[/gold].",
+
+  "BALANCEDVARIETYPACK-BLUNT.title": "Blunt",
+  "BALANCEDVARIETYPACK-BLUNT.description": "Gain {Energy:energyIcons()}.\nApply {HighPower:diff()} [gold]High[/gold] to yourself."
 }
