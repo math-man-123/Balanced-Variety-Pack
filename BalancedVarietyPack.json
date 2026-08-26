@@ -4,7 +4,7 @@
   "author": "Plüschgiraffe",
   "description": "Content expansion aiming at increasing run variety, while staying close to vanilla balancing.",
   "version": "v0.11.0",
-  "min_game_version": "0.111.0",
+  "min_game_version": "0.112.0",
   "has_pck": true,
   "has_dll": true,
   "dependencies": [
