@@ -5,5 +5,5 @@
 
   "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.title": "Extra Turn",
   "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.description": "Upon ending your turn, take an additional one.",
-  "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.smartDescription": "The next {Amount:plural:time|[blue]{}[/blue] times} you end your turn, immediately take an additional one."
+  "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.smartDescription": "The next {Amount:plural:time|[blue]{}[/blue] times} you end your turn, take an additional one."
 }

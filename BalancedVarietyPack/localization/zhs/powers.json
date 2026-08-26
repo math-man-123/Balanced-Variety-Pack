@@ -5,5 +5,5 @@
 
   "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.title": "额外回合",
   "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.description": "在你的回合结束时，额外进行一个回合。",
-  "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.smartDescription": "接下来{Amount:plural:次|[blue]{}[/blue]次}结束你的回合时，立即进行一个额外回合。"
+  "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.smartDescription": "接下来的{Amount:plural:time|[blue]{}[/blue]次}你结束你的回合时，额外进行一个回合。"
 }
