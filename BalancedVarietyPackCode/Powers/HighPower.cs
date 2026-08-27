@@ -14,6 +14,12 @@ namespace BalancedVarietyPack.BalancedVarietyPackCode.Powers;
     
 public class HighPower : CustomPowerModel
 {
+    private const string CombinedIconPath = 
+        "res://BalancedVarietyPack/images/powers/high.png";
+
+    public override string? CustomPackedIconPath => CombinedIconPath;
+    public override string? CustomBigIconPath => CombinedIconPath;
+    
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Counter;
 

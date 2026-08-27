@@ -8,6 +8,12 @@ namespace BalancedVarietyPack.BalancedVarietyPackCode.Powers;
 
 public class ExtraTurnPower : CustomPowerModel
 {
+    private const string CombinedIconPath =
+        "res://BalancedVarietyPack/images/powers/extra_turn.png";
+    
+    public override string? CustomPackedIconPath => CombinedIconPath;
+    public override string? CustomBigIconPath => CombinedIconPath;
+    
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
