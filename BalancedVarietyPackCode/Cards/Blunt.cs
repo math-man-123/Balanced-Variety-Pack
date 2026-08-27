@@ -16,6 +16,9 @@ namespace BalancedVarietyPack.BalancedVarietyPackCode.Cards;
 public class Blunt() : CustomCardModel(
     baseCost: 1, CardType.Skill, CardRarity.Rare, TargetType.Self)
 {
+    public override string? CustomPortraitPath =>
+        "res://BalancedVarietyPack/images/card_portraits/blunt.png";
+    
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [ CardKeyword.Exhaust ];
     
