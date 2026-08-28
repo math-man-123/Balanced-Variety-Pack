@@ -20,6 +20,13 @@ namespace BalancedVarietyPack.BalancedVarietyPackCode.Relics;
 [Pool(typeof(EventRelicPool))]
 public class BloodyCrown : CustomRelicModel
 {
+    private const string CombinedIconPath =
+        "res://BalancedVarietyPack/images/relics/bloody_crown.png";
+    
+    public override string PackedIconPath => CombinedIconPath;
+    protected override string BigIconPath => CombinedIconPath;
+    protected override string PackedIconOutlinePath => CombinedIconPath;
+
     public override RelicRarity Rarity => RelicRarity.Ancient;
     public override bool HasUponPickupEffect => true;
     
