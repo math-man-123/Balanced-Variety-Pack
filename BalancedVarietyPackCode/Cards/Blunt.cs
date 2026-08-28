@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace BalancedVarietyPack.BalancedVarietyPackCode.Cards;
 
@@ -54,6 +55,7 @@ public class Blunt() : CustomCardModel(
     
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        // EnergyCost.UpgradeBy(-1);
+        AddKeyword(CardKeyword.Retain);
     }
 }
