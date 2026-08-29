@@ -1,7 +1,0 @@
-{
-  "BALANCEDVARIETYPACK-DESPAIR.title": "绝望",
-  "BALANCEDVARIETYPACK-DESPAIR.description": "在你的回合结束时，如果此牌在你的[gold]手牌[/gold]中，随机一名敌人获得{ThornsPower:diff()}点[gold]荆棘[/gold]。",
-
-  "BALANCEDVARIETYPACK-BLUNT.title": "大麻烟卷",
-  "BALANCEDVARIETYPACK-BLUNT.description": "获得{ExtraTurnPower:diff()}[gold]额外回合[/gold]。\n对自己施加{HighPower:diff()}[gold]高[/gold]。"
-}

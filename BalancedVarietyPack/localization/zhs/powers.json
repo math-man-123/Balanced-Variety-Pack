@@ -1,9 +1,0 @@
-{
-  "BALANCEDVARIETYPACK-HIGH_POWER.title": "兴奋",
-  "BALANCEDVARIETYPACK-HIGH_POWER.description": "你的卡牌目标有一定几率被随机化，包括你自己和盟友。",
-  "BALANCEDVARIETYPACK-HIGH_POWER.smartDescription": "你的卡牌目标有[blue]{Amount}%[/blue]几率被随机化，包括你自己和盟友。",
-
-  "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.title": "额外回合",
-  "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.description": "在你的回合结束时，额外进行一个回合。",
-  "BALANCEDVARIETYPACK-EXTRA_TURN_POWER.smartDescription": "接下来的{Amount:plural:time|[blue]{}[/blue]次}你结束你的回合时，额外进行一个回合。"
-}
